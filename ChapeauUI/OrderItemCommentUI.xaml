@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="ChapeauUI.OrderItemCommentUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChapeauUI"
+             mc:Ignorable="d" d:DesignWidth="800" Background="White" Height="48">
+    <Grid Margin="5,0,0,380">
+        <TextBlock x:Name="Lbl_OrderComment" HorizontalAlignment="Left" Margin="0,1,0,-48" TextWrapping="Wrap" Text="Order comment" VerticalAlignment="Top" FontStyle="Italic" Foreground="#FF131313" Width="622" Height="47" TextTrimming="CharacterEllipsis"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="ChapeauUI.OrderCheckout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChapeauUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="573" d:DesignWidth="1024">
+    <UserControl.Resources>
+        <BitmapImage x:Key="CloseIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/ChapeauUI;component/Resources/cross@3x.png"/>
+        <BitmapImage x:Key="OrderIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/ChapeauUI;component/Resources/order_icon@3x.png"/>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Label Content="No order taken yet" HorizontalAlignment="Left" Margin="158,45,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Height="33"/>
+        <Image x:Name="Btn_Close" HorizontalAlignment="Left" Height="29" Margin="985,10,0,0" VerticalAlignment="Top" Width="29" Source="{StaticResource CloseIcon}" MouseDown="Btn_Close_MouseDown"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="10,223,0,0" VerticalAlignment="Top" Width="100" Source="{StaticResource OrderIcon}"/>
+        <Label Content="Total:" HorizontalAlignment="Left" Margin="149,463,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.263,-0.038" FontSize="24" FontWeight="Bold"/>
+        <Label x:Name="Lbl_OrderTotal" Content="€0,00" HorizontalAlignment="Left" Margin="238,463,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
+        <Button Content="SEND ORDER TO KITCHEN" HorizontalAlignment="Left" Margin="149,518,0,0" VerticalAlignment="Top" Width="181" Height="36" Background="#FFE7DAFF" BorderBrush="#FFE7DAFF" Foreground="#FF45414D" FontWeight="Bold"/>
+        <Button x:Name="Btn_CreateOrder" Content="SEND ORDER TO KITCHEN" HorizontalAlignment="Left" Margin="149,518,0,0" VerticalAlignment="Top" Width="181" Height="36" Background="#FFE7DAFF" BorderBrush="#FFE7DAFF" Foreground="#FF45414D" FontWeight="Bold" Click="Btn_CreateOrder_Click" IsEnabled="False"/>
+        <Button x:Name="Btn_DeleteOrder" Content="DELETE ORDER" HorizontalAlignment="Left" Margin="346,518,0,0" VerticalAlignment="Top" Width="122" Height="36" Background="White" BorderBrush="#FFDF1454" Foreground="#FF83092F" FontWeight="Bold" BorderThickness="2" Click="Btn_DeleteOrder_Click"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="425" Margin="149,30,0,0" VerticalAlignment="Top" Width="830" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="Stack_Items" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="800" ScrollViewer.VerticalScrollBarVisibility="Auto" CanVerticallyScroll="True" ScrollViewer.CanContentScroll="True"/>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

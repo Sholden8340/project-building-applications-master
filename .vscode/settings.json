@@ -1,0 +1,13 @@
+{
+  "sqltools.connections": [
+    {
+      "database": "dbchapeau01",
+      "dialect": "MSSQL",
+      "name": "Chapeau group 1",
+      "password": "Bi8GTgH!_Huk",
+      "port": 1433,
+      "server": "den1.mssql8.gear.host",
+      "username": "dbchapeau01"
+    }
+  ]
+}

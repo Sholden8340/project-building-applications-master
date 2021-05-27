@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="ChapeauUI.AddWithCommentUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChapeauUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="220" d:DesignWidth="580">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="289*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="White" Stroke="#FF707070" Grid.ColumnSpan="2"/>
+        <Rectangle Fill="WhiteSmoke" Height="173" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Margin="1,0,1,1">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Label Content="Add with comment" HorizontalAlignment="Left" Margin="8,7,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Grid.Column="1"/>
+        <TextBox x:Name="Inp_Comments" HorizontalAlignment="Left" Height="111" Margin="8,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="560" SelectionBrush="#FF8CC2EE" Foreground="#FF45414D" BorderBrush="#FFB892FF" BorderThickness="2" Padding="8,4" MaxLength="300" ToolTip="Write the comments here for the MenuItem." Grid.Column="1"/>
+        <Button x:Name="Btn_AddWithComment" Content="ADD" HorizontalAlignment="Left" Margin="502,181,0,0" VerticalAlignment="Top" Width="66" Height="29" Background="#FFE7DAFF" BorderBrush="#FFE7DAFF" Foreground="#FF45414D" FontWeight="Bold" Grid.Column="1"/>
+        <Button x:Name="Btn_Cancel" Content="CANCEL" HorizontalAlignment="Left" Margin="423,181,0,0" VerticalAlignment="Top" Width="66" Height="29" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF45414D" FontWeight="Bold" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,64,0,0" TextWrapping="Wrap" Text="Enter comments here" VerticalAlignment="Top" Foreground="#FF878787" IsHitTestVisible="False" Cursor="None" Grid.Column="1">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=Inp_Comments}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+    </Grid>
+</UserControl>

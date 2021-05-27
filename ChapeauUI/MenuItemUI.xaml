@@ -1,0 +1,40 @@
+﻿<UserControl x:Name="MenuItemControl" x:Class="ChapeauUI.MenuItemUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChapeauUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="123" d:DesignWidth="771" Width="772" Height="123" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF45414D">
+    <UserControl.Resources>
+        <BitmapImage x:Key="CommentIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/ChapeauUI;component/Resources/comment icon@2x.png"/>
+    </UserControl.Resources>
+    <Grid Width="771" MinHeight="107" Margin="0,0,0,0" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="53*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="details" MaxWidth="600" MinWidth="600" Width="600*"/>
+            <ColumnDefinition x:Name="price" MaxWidth="80" MinWidth="80" Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="White" Height="113" Margin="0,0,-90,1" Stroke="#FFE7DAFF" Width="766" Grid.RowSpan="2" Grid.ColumnSpan="2" RadiusX="10" RadiusY="10" HorizontalAlignment="Left" MaxWidth="771"/>
+
+        <Label x:Name="LabelItemName" Content="Product name" HorizontalAlignment="Left" Margin="16,12,0,2.333" VerticalAlignment="Center" Grid.Column="0" Height="43" Width="518" Foreground="#FF3D3B3B" FontWeight="Bold" FontSize="24"/>
+        <Label x:Name="LabelPrice" Content="€ 0,00" HorizontalAlignment="Left" Margin="45,11,-63,2.333" VerticalAlignment="Center" Grid.Column="1" Height="44" Width="99" Foreground="#FF3D3B3B" FontWeight="Bold" FontSize="24"/>
+        <Button Content="ADD" Margin="142,14,407,15" RenderTransformOrigin="0.557,0.28" x:Name="Btn_AddItem" Background="#FFE7DAFF" BorderBrush="#FFE7DAFF" Foreground="#FF45414D" Grid.Row="1"/>
+        <Button Grid.Column="1" Margin="65,49,-63,1" x:Name="btn_AddWithComment" BorderBrush="{x:Null}" Background="{x:Null}" Grid.RowSpan="2">
+            <StackPanel>
+                <Image Height="31" Margin="0,0,0,0" Width="31" VerticalAlignment="Top" Source="{StaticResource CommentIcon}"/>
+                <Label Content="Comment" Foreground="#FF45414D" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <TextBox x:Name="Inp_ProductAmount" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="26" Margin="52,14,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="42" TextAlignment="Center" BorderBrush="#FFB892FF" BorderThickness="1,2" Foreground="#FF3D3B3B" Grid.Row="1" MaxLines="1" MaxLength="2"/>
+        <Button x:Name="Btn_Increase" Content="+" HorizontalAlignment="Left" Margin="94,14,0,0" VerticalAlignment="Top" Width="36
+                " Height="26" BorderBrush="#FFB892FF" Background="#FFE7DAFF" BorderThickness="1,2,2,2" Foreground="#FF3D3B3B" Click="Btn_Increase_Click" Grid.Row="1"/>
+        <Button x:Name="Btn_Decrease" Content="-" HorizontalAlignment="Left" Margin="16,14,0,0" VerticalAlignment="Top" Width="36" Height="26" BorderBrush="#FFB892FF" Background="#FFE7DAFF" BorderThickness="2,2,1,2" Foreground="#FF3D3B3B" Click="Btn_Decrease_Click" Grid.Row="1"/>
+        <Label x:Name="Lbl_AddedToOrder" Content="Added item to order" HorizontalAlignment="Left" Margin="223,14,0,0" Grid.Row="1" VerticalAlignment="Top" Width="148" Foreground="#FFDF1454" FontWeight="Bold" FontSize="14" Visibility="Collapsed"/>
+        <Label x:Name="Lbl_OutOfStock" Content="Out of stock" HorizontalAlignment="Left" Height="26" Margin="501,25,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold" Background="{x:Null}" Foreground="#FFDF1454" Visibility="Collapsed"/>
+
+    </Grid>
+</UserControl>
